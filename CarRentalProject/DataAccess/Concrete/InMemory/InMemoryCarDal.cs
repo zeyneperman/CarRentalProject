@@ -20,7 +20,7 @@ namespace DataAccess.Concrete.InMemory
                 new Car
                 {
                     CarId = 1, BrandId = 1, ColorId = 3,
-                    DailyPrice = 120, ModelYear = 2004},//,Description = "deneme"
+                    DailyPrice = 120, ModelYear = 2004},
                 new Car
                 {
                     CarId = 2, BrandId = 2, ColorId = 1,
@@ -37,13 +37,7 @@ namespace DataAccess.Concrete.InMemory
         }
         public void Delete(Car car)
         {
-            // LINQ / Language Integrated Query (Dile Gömmülü Sorgulama)
-            // Liste bazlı yapıları SQL'deki gibi sorgulayabiliriz.
             Car carToDelete = null;
-            // using System.Linq; yazmayı unutma
-            // ürünleri tek tek dolaşmak için kullanılır
-            // Id aramada gel-nelde "SingleOrDefault()" metodu kullanılır.
-            // Bunun yerine "FirsstOrDefault()" veya "First()" metodlarını da kullanabiliriz.
             carToDelete = _cars.SingleOrDefault(c => c.CarId == car.CarId);
 
             _cars.Remove(carToDelete);
@@ -67,13 +61,12 @@ namespace DataAccess.Concrete.InMemory
 
         public void Update(Car car)
         {
-            //Göderilen ürün Id'sine sahip olan ürünü bul
             Car carToUpdate = null;
             carToUpdate = _cars.SingleOrDefault(c => c.CarId == car.CarId);
             carToUpdate.BrandId = car.BrandId;
             carToUpdate.ColorId = car.ColorId;
             carToUpdate.DailyPrice = car.DailyPrice;
-            //carToUpdate.Description = car.Description;
+            //carToUpdate.Description = car.Description;  //Zorunlu değil 
             carToUpdate.ModelYear = car.ModelYear;
         }
 

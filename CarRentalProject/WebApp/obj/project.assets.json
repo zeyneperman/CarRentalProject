@@ -6380,11 +6380,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\WebApp\\WebApp.csproj",
+      "projectPath": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\WebApp\\WebApp.csproj",
       "packagesPath": "C:\\Users\\Zeynep Erman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\WebApp\\obj\\",
+      "outputPath": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zeynep Erman\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6400,11 +6400,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Business\\Business.csproj"
+            "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Business\\Business.csproj"
             },
-            "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\Core.csproj"
+            "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\Core.csproj"
             }
           }
         }

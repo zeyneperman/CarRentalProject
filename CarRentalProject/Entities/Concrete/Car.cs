@@ -7,7 +7,6 @@ namespace Entities.Concrete
 {
     public class Car : IEntity
     {
-        // Bir class'ın default'u internal'dır.
         public int CarId { get; set; }
         public int BrandId { get; set; }
         public int ColorId { get; set; }

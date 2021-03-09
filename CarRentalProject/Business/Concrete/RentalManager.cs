@@ -28,12 +28,6 @@ namespace Business.Concrete
         }
         public IDataResult<List<RentalDetailDto>> GetRentalDetails()
         {
-            // Aşagidaki yorum satırları consol denemesinde test etmek için olurşturuldu
-
-            if (DateTime.Now.Hour == 18)
-            {
-                return new ErrorDataResult<List<RentalDetailDto>>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails());
         }
     }

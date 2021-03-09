@@ -9,7 +9,6 @@ namespace Business.Concrete
 {
     public class ColorManager : IColorService
     {
-        //iş kodları
         IColorDal _colorDal;
 
         public ColorManager(IColorDal colorDal)

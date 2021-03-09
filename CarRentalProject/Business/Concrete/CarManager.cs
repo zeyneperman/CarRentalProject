@@ -14,10 +14,8 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    public class CarManager :ICarService
+    public class CarManager : ICarService
     {
-        // bir iş sınıfı başka sınıflardan yeni eleman üretmez
-        // burada sadece ICarDal kullanılır, ayni soyut nesneyle bağlantı kurulur
         ICarDal _carDal;
         IBrandService _brandService;
         public CarManager(ICarDal carDal, IBrandService brandService)
@@ -39,15 +37,10 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductAdded);
         }
 
-        // iş kodları
-        // koşulları buralarda kullanırız,
         public IDataResult<List<Car>> GetAll()
         {
-            // iş kodları
-            // koşulları buralarda kullanırız
-            // işlemin gerçekleşip gerçekleşmediğine dair bir geri dönüş vermesini istiyorum
 
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 5)
             {
                 return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
             }
@@ -68,12 +61,13 @@ namespace Business.Concrete
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            // Aşagidaki yorum satırları consol denemesinde test etmek için olurşturuldu
+            // Aşagidaki yorum satırları hata mesajını test etmek için olurşturuldu
 
-            if (DateTime.Now.Hour == 18)
-            {
-                return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
-            }
+            //if (DateTime.Now.Hour == 18)
+            //{
+            //    return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
+            //}
+
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
         public IDataResult<Car> GetById(int cartId)
@@ -90,7 +84,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        private IResult CheckIfCategoryLimitExceded() // CategoryService ekelmememizin seebebi şu; Categoryden aldığın değeri nasıl yorumlayacağımı ele aldım.
+        private IResult CheckIfCategoryLimitExceded() // Categoryden alınan değerin yorumlanması
         {
             var result = _brandService.GetAll();
             if (result.Data.Count > 50)

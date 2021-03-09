@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\Core.csproj": {}
+    "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\Core.csproj": {
+    "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Zeynep Erman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zeynep Erman\\Desktop\\Kodlama.io\\CarRentalProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\Zeynep Erman\\Documents\\GitHub\\Deneme\\CarRentalProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zeynep Erman\\AppData\\Roaming\\NuGet\\NuGet.Config",
