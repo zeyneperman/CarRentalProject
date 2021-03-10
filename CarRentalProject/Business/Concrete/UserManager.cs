@@ -1,10 +1,15 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspect.Autofac.Validation;
+using Core.Business;
+using Core.Results;
 using Core.Utulities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -16,13 +21,47 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
+        [ValidationAspect(typeof(UserValidator))]
+        public IResult Add(User user)
+        {
+            IResult result = BusinessRules.Run(CheckIfUserNameExists(user.FirstName, user.LastName));
+            if (result != null)
+            {
+                return result;
+            }
+            _userDal.Add(user);
+            return new SuccessResult(Messages.UserAdded);
+        }
+
         public IDataResult<List<User>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UsersListed);
+        }
+
+        public IDataResult<User> GetById(int userId)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(c => c.UserId == userId));
+        }
+
+        [ValidationAspect(typeof(UserValidator))]
+        public IResult Update(User user)
+        {
+            IResult result = BusinessRules.Run(CheckIfUserNameExists(user.FirstName, user.LastName));
+            if (result != null)
             {
-                return new ErrorDataResult<List<User>>(Messages.MaintenanceTime);
+                return result;
             }
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.ProductListed);
+            _userDal.Add(user);
+            return new SuccessResult(Messages.UserUpdated);
+        }
+        private IResult CheckIfUserNameExists(string firstName, string lastName)
+        {
+            var result = _userDal.GetAll(u => u.FirstName == firstName && u.LastName == lastName).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.UserNameAlreadyExists);
+            }
+            return new SuccessResult();
         }
     }
 }

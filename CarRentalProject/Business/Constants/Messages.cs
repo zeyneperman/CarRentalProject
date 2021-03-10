@@ -28,5 +28,9 @@ namespace Business.Constants
         public static string NotFoundCar = "Araç kaydı bulunmamakta.";
         public static string RentalAdded = "Kiralama kaydı eklendi.";
         public static string RentalUpdated = "Kiralama kaydı güncellendi.";
+        public static string UsersListed = "Kullanıcılar listelendi.";
+        public static string UserAdded = "Kullanıcı eklendi.";
+        public static string UserNameAlreadyExists = "Bu kullanıcı daha önce eklendi.";
+        public static string UserUpdated = "Kullanıcı güncellendi.";
     }
 }
