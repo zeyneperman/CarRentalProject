@@ -1,5 +1,7 @@
-﻿using Core.Utulities.Results;
+﻿using Core.Results;
+using Core.Utulities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +11,9 @@ namespace Business.Abstract
     public interface IRentalService
     {
         IDataResult<List<Rental>> GetAll();
-        IDataResult<List<Rental>> GetAllByBrand(int id);
+        IResult Add(Rental rental);
+        IDataResult<Rental> GetById(int rentalId);
+        IResult Update(Rental rental);
+        IDataResult<List<RentalDetailDto>> GetRentalDetails();
     }
 }

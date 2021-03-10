@@ -24,5 +24,9 @@ namespace Business.Constants
         public static string CustomerUpdated = "Müşteri güncellendi.";
         public static string CustomerAdded = "Müşteri eklendi.";
         public static string CompanyNameAlreadyExists = "Bu müşteri daha önce eklendi.";
+        public static string RentalListed = "Kiralama kayıt listesi";
+        public static string NotFoundCar = "Araç kaydı bulunmamakta.";
+        public static string RentalAdded = "Kiralama kaydı eklendi.";
+        public static string RentalUpdated = "Kiralama kaydı güncellendi.";
     }
 }
