@@ -1,4 +1,5 @@
-﻿using Core.Utulities.Results;
+﻿using Core.Results;
+using Core.Utulities.Results;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace Business.Abstract
     public interface IColorService
     {
         IDataResult<List<Color>> GetAll();
-        IDataResult<List<Color>> GetAllByBrand(int id);
+        IDataResult<Color> GetById(int colorId);
+        IResult Add(Color color);
+        IResult Update(Color color);
     }
 }

@@ -42,9 +42,20 @@ namespace Business.Concrete
             return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == brandId));
         }
 
+        public IResult Update(Brand brand)
+        {
+            IResult result = BusinessRules.Run(CheckIfBrandNameExists(brand.BrandName));
+            if (result != null)
+            {
+                return result;
+            }
+            _brandDal.Add(brand);
+            return new SuccessResult(Messages.BrandUpdated);
+        }
+
         private IResult CheckIfBrandNameExists(string brandName)
         {
-            var result = _brandDal.GetAll(p => p.BrandName == brandName).Any(); 
+            var result = _brandDal.GetAll(c => c.BrandName == brandName).Any(); 
             if (result)
             {
                 return new ErrorResult(Messages.BrandNameAlreadyExists);
