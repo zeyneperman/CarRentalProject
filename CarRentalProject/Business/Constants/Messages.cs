@@ -12,5 +12,8 @@ namespace Business.Constants
         public static string ProductListed = "Ürünler listelendi";
         public static string CarCountOfBrandError = "Marka ekleme sınırını aştınız.";
         public static string BrandLimitExceted = "Marka stok limitini aştınız.";
+
+        public static string BrandAdded { get; internal set; }
+        public static string BrandNameAlreadyExists { get; internal set; }
     }
 }

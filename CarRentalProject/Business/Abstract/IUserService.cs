@@ -9,5 +9,6 @@ namespace Business.Abstract
     public interface IUserService
     {
         IDataResult<List<User>> GetAll();
+        IDataResult<List<User>> GetAllByBrand(int id);
     }
 }
