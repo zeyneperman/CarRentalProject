@@ -48,6 +48,46 @@ namespace WebApp1.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getallbybrand")]
+        public IActionResult GetAllByBrand(int id)
+        {
+            var result = _carService.GetAllByBrand(id);
+            if(result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getbyunitprice")]
+        public IActionResult GetByUnitPrice(decimal min, decimal max)
+        {
+            var result = _carService.GetByUnitPrice(min, max);
+            if(result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getcardetalis")]
+        public IActionResult GetCarDetails()
+        {
+            var result = _carService.GetCarDetails();
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("Update")]
+        public IActionResult Update(Car car)
+        {
+            var result = _carService.Add(car);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
     }
 }
