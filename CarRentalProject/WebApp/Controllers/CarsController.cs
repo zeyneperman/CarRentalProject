@@ -14,7 +14,7 @@ namespace WebApp1.Controllers
     public class CarsController : ControllerBase
     {
         ICarService _carService;
-        public CarsController(ICarService carService) 
+        public CarsController(ICarService carService)
         {
             _carService = carService;
         }

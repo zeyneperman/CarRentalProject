@@ -22,7 +22,7 @@ namespace Business.Concrete
         {
             _colorDal = colorDal;
         }
-        [ValidationAspect(typeof(CarValidator))]
+        [ValidationAspect(typeof(ColorValidator))]
         public IResult Add(Color color)
         {
             IResult result = BusinessRules.Run(CheckIfColorNameExists(color.ColorName));
@@ -33,7 +33,7 @@ namespace Business.Concrete
             _colorDal.Add(color);
             return new SuccessResult(Messages.ColorAdded);
         }
-        [ValidationAspect(typeof(CarValidator))]
+        [ValidationAspect(typeof(ColorValidator))]
         public IResult Update(Color color)
         {
             IResult result = BusinessRules.Run(CheckIfColorNameExists(color.ColorName));
